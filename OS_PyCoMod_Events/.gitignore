@@ -1,0 +1,15 @@
+# ignore ALL files in directories named build, dist, pycomod.egg-info
+build/
+dist/
+pycomod.egg-info/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Other ignores
+*.xlsx
+*.bak
+.ipynb_checkpoints/
+
