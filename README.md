@@ -32,3 +32,7 @@ or open `MultiFleet.ipynb`. Both dispatch a Monte Carlo job (`reps` repetitions)
 ## Output size
 
 By default `pycomod` tracks every pool/flow/parameter/equation in a model for output — for this model that meant ~60x more data coming back per job slice than what's actually plotted. `MultiFleet.py`/`MultiFleet.ipynb` restrict this per-submodel via `set_output(...)` (called after construction — calling it inside a model's own `build()` doesn't stick, since `Model.__init__` resets tracked output right after `build()` returns), drop a redundant per-element `dates` array (derivable from `times` + a shared start date), and downcast to `float32`. Together these cut per-slice output from ~63 MB to a couple MB for the same run.
+
+## Results
+
+![Fleet Model Monte Carlo results](multifleet-results.png)
