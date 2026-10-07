@@ -1,11 +1,12 @@
 # Requires node.js (https://nodejs.org/en/download)
 # Requires dcp (pip install dcp)
 # Requires numpy, pandas, matplotlib (pip install numpy pandas matplotlib)
-# Requires the local OS_PyCoMod_Events/pycomod package alongside this script
-# Requires a DCP identity/wallet (dcp keystore, or set explicitly below)
+# Requires the local pycomod package (pip install -e OS_PyCoMod_Events)
+# Requires a DCP identity/wallet (dcp keystore, or DCP_API_KEY below)
 
 from datetime import datetime
 import json
+import os
 import numpy as np
 import pycomod as pcm
 
@@ -16,8 +17,9 @@ from dcp import identity
 from dcp import wallet
 
 # DCP API AND PAYMENT KEYS
+# Uses the dcp keystore if present; otherwise set DCP_API_KEY or paste your key here
 if not identity.check():
-    identity.set("0x908ed06b96a3cdc2466375dcc19d6edd5c61149a2d9fda2da8506e1dc3623ad2")
+    identity.set(os.environ.get("DCP_API_KEY", "<your_dcp_api_key>"))
 wallet.add(wallet.get("default"))
 
 

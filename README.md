@@ -11,8 +11,9 @@ A multi-fleet pilot workforce model built on [pycomod](https://github.com/DRDC-R
 
 ```
 pip install dcp numpy pandas matplotlib
+pip install -e OS_PyCoMod_Events
 ```
-Also requires [Node.js](https://nodejs.org/en/download) and a DCP identity/wallet (keystore in `~/.dcp`, or set explicitly in the script).
+Also requires [Node.js](https://nodejs.org/en/download) and a DCP identity/wallet: a keystore in `~/.dcp`, or your key in the `DCP_API_KEY` environment variable.
 
 ## Running
 
