@@ -20,7 +20,7 @@ from dcp import wallet
 # Uses the dcp keystore if present; otherwise set DCP_API_KEY or paste your key here
 if not identity.check():
     identity.set(os.environ.get("DCP_API_KEY", "<your_dcp_api_key>"))
-wallet.add(wallet.get("default"))
+wallet.add(wallet.get("CORA"))
 
 
 # Initialization dictionary for the multi-fleet model
